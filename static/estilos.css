@@ -1,21 +1,32 @@
+/* ======== Fondo animado ======== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    background-size: 200% 200%;
+    animation: fondoAnimado 10s ease infinite;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ======== Encabezado ======== */
 header h1 {
     animation: aparecer 2s ease-in-out;
 }
 
 header {
-    background-color: #0078d7;
+    background-color: rgba(0, 120, 215, 0.9);
     color: white;
     text-align: center;
     padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    border-bottom: 2px solid #fff;
 }
 
 nav a {
@@ -31,34 +42,47 @@ nav a:hover {
     transform: scale(1.1); 
 }
 
-
+/* ======== Secciones ======== */
 main {
     padding: 20px;
 }
 
-section, article {
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+section {
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: entradaSuave 1.5s ease;
 }
 
-section:hover, article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+section:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
+@keyframes entradaSuave {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+/* ======== Pie de página ======== */
 footer {
-    background-color: #222;
+    background-color: rgba(34, 34, 34, 0.9);
     color: white;
     text-align: center;
     padding: 10px 0;
+    border-top: 2px solid #fff;
 }
 
-
+/* ======== Animación de aparición ======== */
 @keyframes aparecer {
     0% {
         opacity: 0;
@@ -69,3 +93,93 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* ======== ACTIVIDAD 1: Botón ======== */
+.boton-animado {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.boton-animado:hover {
+    background-color: #005fa3;
+}
+
+.boton-animado:active {
+    background-color: #004a82;
+    transform: scale(0.9);
+}
+
+/* ======== ACTIVIDAD 2 y 4: Cuadro animado ======== */
+.cuadro {
+    width: 100px;
+    height: 100px;
+    background-color: #ff6600;
+    margin: 20px auto;
+    animation: moverDerecha 4s infinite linear;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.cuadro:hover {
+    transform: scale(1.2);
+}
+
+@keyframes moverDerecha {
+    0% {
+        transform: translateX(0);
+        background-color: #ff6600;
+    }
+    25% {
+        transform: translateX(50px);
+        background-color: #00ccff;
+    }
+    50% {
+        transform: translateX(0);
+        background-color: #00cc66;
+    }
+    75% {
+        transform: translateX(-50px);
+        background-color: #cc00ff;
+    }
+    100% {
+        transform: translateX(0);
+        background-color: #ff6600;
+    }
+}
+
+/* ======== ACTIVIDAD 3 y 5: Texto animado ======== */
+.texto-animado {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: girarTexto 3s infinite ease-in-out;
+    color: #004a82;
+    margin-top: 15px;
+}
+
+@keyframes girarTexto {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+    25% {
+        transform: rotate(10deg) translateY(-10px);
+    }
+    50% {
+        transform: rotate(0deg) translateY(0);
+    }
+    75% {
+        transform: rotate(-10deg) translateY(-10px);
+    }
+    100% {
+        transform: rotate(0deg) translateY(0);
+    }
+}
+
+
