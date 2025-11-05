@@ -69,9 +69,9 @@ footer {
     }
 }
 
-/* ==== ACTIVIDAD 1: Botón (cambia color y tamaño al hacer clic) ==== */
+/* ==== ACTIVIDAD 1: Botón que cambia color y tamaño al hacer clic ==== */
 .boton-animado {
-    background-color: #0078d7;       /* color normal */
+    background-color: #0078d7;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -82,14 +82,13 @@ footer {
 }
 
 .boton-animado:hover {
-    background-color: #0060b5;       /* color al pasar el mouse */
+    background-color: #0060b5;
 }
 
 .boton-animado:active {
-    background-color: #ff6600;       /* color cuando se presiona */
-    transform: scale(0.9);           /* reduce tamaño suavemente */
+    background-color: #ff6600;
+    transform: scale(0.9);
 }
-
 /* ==== ACTIVIDAD 2 y 4: Cuadro animado ==== */
 .cuadro {
     width: 100px;
@@ -153,6 +152,7 @@ footer {
         transform: rotate(0deg) translateY(0);
     }
 }
+
 
 
 
